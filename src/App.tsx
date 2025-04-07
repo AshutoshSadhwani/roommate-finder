@@ -9,12 +9,15 @@ import Profile from './pages/Profile';
 import ExpenseManager from './pages/ExpenseManager';
 import Chat from './pages/Chat';
 import Settings from './pages/Settings';
+import { ClerkProvider } from '@clerk/clerk-react'; 
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   return (
+   
     <Router>
+      
       <div className={`min-h-screen flex flex-col ${isDarkMode ? 'dark' : ''}`}>
         <Navbar isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
         <main className="flex-grow dark:bg-gray-900">
@@ -31,6 +34,8 @@ function App() {
         <Footer />
       </div>
     </Router>
+  
+   
   );
 }
 
